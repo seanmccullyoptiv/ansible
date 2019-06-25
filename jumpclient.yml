@@ -7,4 +7,4 @@
         name: toad
         comment: Because it jumps, get it
         uid: 1001
-        password: {{ upassword | password_hash('sha512') }}
+        password: $1$SomeSalt$vn3N2kuXMnfyyhcNSDkv21 
