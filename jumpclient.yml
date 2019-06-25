@@ -30,4 +30,6 @@
       when: presentjc.stat.exists == False
     - name: start er up
       command: /home/toad/jumpclient/init-script start
+      become: yes
+      become_user: toad
       
