@@ -19,10 +19,13 @@
         mode: +x
         owner: toad
         group: toad
-      register: nojc
+    - name: check if installed
+      stat:
+        path: /home/toad/jumpclient/
+      register: stat_result
     - name: Run it like its hot
       command: /home/toad/bomgar-pec.bin --install-dir /home/toad/jumpclient
       become: yes
       become_user: toad
-      when: nojc.changed
+      when: presentjc.stat.exists == False
         
