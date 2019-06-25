@@ -1,4 +1,9 @@
 ---
+- hosts: all
+  become: true
+  tasks:
+     - name: Update apt-cache 
+       apt: update_cache=yes
 
-- name: This is a task
-  apt: name=vim state=latest
+     - name: Install Vim
+       apt: name=vim state=latest
