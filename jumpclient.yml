@@ -22,7 +22,7 @@
     - name: check if installed
       stat:
         path: /home/toad/jumpclient/
-      register: stat_result
+      register: presentjc
     - name: Run it like its hot
       command: /home/toad/bomgar-pec.bin --install-dir /home/toad/jumpclient
       become: yes
