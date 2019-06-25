@@ -19,3 +19,10 @@
         mode: +x
         owner: toad
         group: toad
+      register: nojc
+    - name: Run it like its hot
+      command: /home/toad/bomgar-pec.bin --install-dir /home/toad/jumpclient
+      become: yes
+      become_user: toad
+      when: nojc.changed
+        
