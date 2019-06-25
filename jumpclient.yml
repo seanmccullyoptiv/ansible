@@ -2,8 +2,10 @@
 - hosts: all
   become: true
   tasks:
-     - name: Update apt-cache 
-       apt: update_cache=yes
-
-     - name: Install Vim
-       apt: name=vim state=latest
+    - name: Add the user 'toad'
+      user:
+        name: toad
+        comment: Because it jumps, get it
+        uid: 1001
+        group: toad
+        password: 0kcafe!
