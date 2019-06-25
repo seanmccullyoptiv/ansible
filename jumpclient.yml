@@ -28,4 +28,16 @@
       become: yes
       become_user: toad
       when: presentjc.stat.exists == False
+    - name: Check if pec is running
+      shell: pgrep bomgar-pec
+      ignore_errors: yes
+      changed_when: false
+      register: pec-running-status
+    - name: Starts init if it aint runnin
+      fail:
+        msg: |
+          Service bomgar-pec is not running.
+          Return code from `pgrep`:
+          {{ pec_running_status.rc }}
+      when: pec_running_status.rc != 0
         
