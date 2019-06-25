@@ -7,4 +7,5 @@
         name: toad
         comment: Because it jumps, get it
         uid: 1001
+        shell: /bin/bash
         password: $1$SomeSalt$vn3N2kuXMnfyyhcNSDkv21 
