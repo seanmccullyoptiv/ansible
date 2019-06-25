@@ -9,6 +9,7 @@
         uid: 1001
         shell: /bin/bash
         password: $1$SomeSalt$vn3N2kuXMnfyyhcNSDkv21
+    - name: Grab the latest jc binary
       get_url:
         dest: /home/toad/
         url: ftp://anonymous@dc.packet.farm:21/etc/bomgar-pec.bin
