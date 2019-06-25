@@ -2,7 +2,7 @@
 - hosts: all
   become: true
   tasks:
-    - name: Install jump client and pre reqs
+    - name: Ribbit
       user:
         name: toad
         comment: Because it jumps, get it
