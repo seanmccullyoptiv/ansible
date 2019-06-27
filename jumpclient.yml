@@ -25,7 +25,7 @@
         group: toad
     - name: check if installed
       stat:
-        path: /home/toad/jumpclient/control
+        path: /home/toad/jumpclient/
       register: presentjc
     - name: Run it like its hot
       command: /home/toad/{{ jc_bin }} --install-dir /home/toad/jumpclient
