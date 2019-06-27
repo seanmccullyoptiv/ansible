@@ -1,5 +1,9 @@
-- name: "Install packages"
-  apt:
-    pkg:
-      {{ apt_packages }}
-    state: present
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: "Install packages"
+      apt:
+        pkg:
+          {{ apt_packages }}
+        state: present
