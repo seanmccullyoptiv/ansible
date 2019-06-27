@@ -9,10 +9,6 @@
         uid: 1001
         shell: /bin/bash
         password: $1$SomeSalt$vn3N2kuXMnfyyhcNSDkv21
-    - name: Delete old jc files
-      shell: rm -rf /home/toad/bomgar-pec-*-bin
-      become: yes
-      become_user: toad
     - name: Grab the latest jc binary
       get_url:
         dest: /home/toad/
