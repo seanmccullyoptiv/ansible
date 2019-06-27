@@ -11,4 +11,4 @@
       command: /home/toad/jumpclient/uninstall | yes | head -n 5
       become: yes
       become_user: toad
-      when: presentjc.stat.exists == False
+      when: presentjc.stat.exists == True
