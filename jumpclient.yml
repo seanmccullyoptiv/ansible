@@ -12,10 +12,10 @@
     - name: Grab the latest jc binary
       get_url:
         dest: /home/toad/
-        url: ftp://anonymous@dc.packet.farm:21/etc/bomgar-pec.bin
+        url: ftp://anonymous@dc.packet.farm:21/etc/{{ jc_bin }}
     - name: Once you got it introduce it to toad
       file:
-        path: /home/toad/bomgar-pec.bin
+        path: /home/toad/{{ jc_bin }}
         mode: +x
         owner: toad
         group: toad
@@ -24,7 +24,7 @@
         path: /home/toad/jumpclient/
       register: presentjc
     - name: Run it like its hot
-      command: /home/toad/bomgar-pec.bin --install-dir /home/toad/jumpclient
+      command: /home/toad/{{ jc_bin }} --install-dir /home/toad/jumpclient
       become: yes
       become_user: toad
       when: presentjc.stat.exists == False
